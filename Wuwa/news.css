@@ -1,0 +1,360 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: black;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom, black, rgba(255, 255, 255, 0));
+    /* Gradient từ trắng mờ đến trong suốt */
+}
+
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 15px;
+}
+
+.header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header nav ul li {
+    margin: 15px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.header nav ul li a::before,
+.header nav ul li a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: gold;
+    width: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    border-radius: 1px;
+    /* Bo góc cho viền */
+}
+
+.header nav ul li a::before {
+    top: 0;
+    /* Viền trên */
+    background-color: transparent;
+}
+
+.header nav ul li a::after {
+    bottom: 0;
+    /* Viền dưới */
+}
+
+.header nav ul li a:hover::before,
+.header nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.header nav ul li a:hover {
+    color: aqua;
+}
+
+#action {
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    width: fit-content;
+    margin: 10px;
+    margin-right: 22px;
+}
+
+#action img {
+    width: 20px;
+    margin: 0px;
+}
+
+.login-btn {
+    background-color: black;
+}
+
+.header nav #action select {
+    background-color: transparent;
+    /* Nền trong suốt */
+    color: white;
+    /* Màu chữ */
+    border: none;
+    /* Xóa viền mặc định */
+    outline: none;
+    /* Xóa viền khi chọn */
+    cursor: pointer;
+    /* Đổi con trỏ thành mũi tên khi hover */
+    margin: 5px;
+    width: 80px;
+}
+
+.header nav #action select option {
+    background-color: black;
+    color: #fff;
+}
+
+.icon-btn {
+    background-color: transparent;
+    /* Nền trong suốt */
+    border: none;
+    /* Xóa viền */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    margin-left: 10px;
+    /* Khoảng cách giữa các biểu tượng */
+}
+
+
+.icon-btn img {
+    width: 30px;
+    /* Kích thước của biểu tượng âm thanh và người dùng */
+    border-radius: 50%;
+    /* Tạo hiệu ứng hình tròn */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Nền mờ nhẹ */
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover img {
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Hiệu ứng khi hover */
+}
+
+.header nav ul li a:hover::before,
+.header nav ul li a:hover::after {
+    height: 20%;
+    /* Khi hover, biến đổi thành hiệu ứng bao quanh chữ */
+}
+
+
+
+
+.title {
+    font-size: 40px;
+    color: #e0c08d;
+    /* Màu chữ giống như trong ảnh */
+    position: absolute;
+    top: 25%;
+    /* Đưa xuống giữa theo chiều dọc */
+    left: 20%;
+    /* Đưa đến giữa theo chiều ngang */
+    transform: translate(-50%, -50%);
+    /* Căn chỉnh theo chiều dọc và ngang */
+    padding-left: 40px;
+    letter-spacing: 2px;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 150px;
+    /* Độ dài của gạch trang trí bên trái */
+    height: 2px;
+    background-color: #caae81;
+    /* Màu của gạch ngang */
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e0c08d;
+    /* Gạch ngang phía dưới */
+    margin-top: 10px;
+}
+
+.title::after {
+    background-image: linear-gradient(to right, #e0c08d 20%, transparent 100%);
+    height: 2px;
+    width: 700%;
+}
+
+.log {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.log1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.log1 .menu{
+    border-bottom: 2px solid #e0c08d;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.title1{
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.title1::after{
+    content: ""; /* Nội dung rỗng cho phần tử giả */
+    position: absolute; /* Định vị tuyệt đối để điều chỉnh vị trí */
+    left: -50px; /* Điều chỉnh sang trái */
+    right: -798px; /* Điều chỉnh sang phải */
+    bottom: 0; /* Đặt ở vị trí dưới cùng */
+    height: 2px; /* Độ dày của dấu gạch */
+    background-color: #e0c08d; /* Màu sắc của dấu gạch */
+}
+.log1 .menu ul {
+    display: flex;
+    list-style: none;
+    position: absolute;
+    top: 29%;
+    left: 18%;
+}
+
+.log1 .menu ul li {
+    margin: 12px;
+}
+
+.log1 .menu ul li a {
+    text-decoration: none;
+    color: #e0c08d;
+    font-size: 15px;
+    position: relative;
+    padding: 10px 5px;
+}
+
+.log1 .menu ul li a::before,
+.log1 .menu ul li a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: gold;
+    width: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    border-radius: 1px;
+    /* Bo góc cho viền */
+}
+
+.log1 .menu ul li a::before {
+    top: 0;
+    /* Viền trên */
+    background-color: transparent;
+}
+
+.log1 .menu ul li a::after {
+    bottom: 0;
+    /* Viền dưới */
+}
+
+.log1 .menu ul li a:hover::before,
+.log1 .menu ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.news-items {
+    list-style-type: none;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column; /* Sắp xếp các mục theo chiều dọc */
+    gap: 30px; /* Khoảng cách giữa các mục */
+}
+.news-items li a::before,
+.news-items li a::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: gold;
+    width: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    border-radius: 1px;
+}
+.news-items li a::before{
+    top: 0;
+    background-color: transparent;
+}
+.news-items li a::after{
+    bottom: 0;
+}
+.news-items li a::before,
+.news-items li a::after{
+    transform: scaleX(4);
+}
+
+
+.news-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left: -15%;
+}
+
+.news-tag {
+    color: #fff;
+    font-weight: bold;
+    width: 60px;
+}
+
+.news-title {
+    flex: 1;
+    margin-left: 10px;
+    color: #ddd;
+}
+
+a .news-date {
+    width: 80px;
+    text-align: right;
+    color: #999;
+}
+
+.news-image {
+    width: 40%;
+    position: absolute;
+    top: 35.5%;
+    left: 48%;
+}
+
+.news-image img {
+    width: 100%;
+    border-radius: 10px;
+}

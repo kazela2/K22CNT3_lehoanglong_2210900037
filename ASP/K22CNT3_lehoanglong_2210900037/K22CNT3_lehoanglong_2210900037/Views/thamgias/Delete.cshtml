@@ -1,0 +1,48 @@
+﻿@model K22CNT3_lehoanglong_2210900037.Models.thamgia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>thamgia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaythamgia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaythamgia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sukien.tieude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sukien.tieude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.taikhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.taikhoan)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

@@ -1,0 +1,15 @@
+﻿<link rel="stylesheet" href="~/Content/index.css" />
+<body>
+    <div id="left">
+        <img src="~/Content/img/logo.png" alt="logo" />
+
+
+        <li>@Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li>@Html.ActionLink("Người dùng", "Index", "Users", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Thông tin người dùng", "Index", "thongtinUsers", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Sự kiện", "Index", "Sukiens", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Thông tin tham gia sự kiện", "Index", "thamgias", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Đánh Giá", "Index", "danhgias", new { area = "" }, new { @class = "nav-link" })</li>
+
+    </div>
+</body>

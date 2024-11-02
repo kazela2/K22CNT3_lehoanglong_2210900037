@@ -1,0 +1,331 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: black;
+}
+
+.video-back {
+    position: absolute;
+    display: flex;
+    z-index: -1;
+    width: 100%;
+    /* Đảm bảo video nền phủ toàn màn hình */
+    height: 100%;
+    /* Đảm bảo video nền phủ toàn màn hình */
+}
+
+#background-clip {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Đảm bảo video nền không bị méo */
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom, black, rgba(255, 255, 255, 0));
+    /* Gradient từ trắng mờ đến trong suốt */
+}
+
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 15px;
+}
+
+.header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header nav ul li {
+    margin: 15px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.header nav ul li a::before,
+.header nav ul li a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: gold;
+    width: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    border-radius: 1px;
+    /* Bo góc cho viền */
+}
+
+.header nav ul li a::before {
+    top: 0;
+    /* Viền trên */
+    background-color: transparent;
+}
+
+.header nav ul li a::after {
+    bottom: 0;
+    /* Viền dưới */
+}
+
+.header nav ul li a:hover::before,
+.header nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.header nav ul li a:hover {
+    color: aqua;
+}
+
+#action {
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    width: fit-content;
+    margin: 10px;
+    margin-right: 22px;
+}
+
+#action img {
+    width: 20px;
+    margin: 0px;
+}
+
+.login-btn {
+    background-color: black;
+}
+
+.header nav #action select {
+    background-color: transparent;
+    /* Nền trong suốt */
+    color: white;
+    /* Màu chữ */
+    border: none;
+    /* Xóa viền mặc định */
+    outline: none;
+    /* Xóa viền khi chọn */
+    cursor: pointer;
+    /* Đổi con trỏ thành mũi tên khi hover */
+    margin: 5px;
+    width: 80px;
+}
+
+.header nav #action select option {
+    background-color: black;
+    color: #fff;
+}
+
+.icon-btn{
+    background-color: transparent;
+    /* Nền trong suốt */
+    border: none;
+    /* Xóa viền */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    margin-left: 10px;
+    /* Khoảng cách giữa các biểu tượng */
+}
+.icon-btn img{
+    width: 30px;
+    /* Kích thước của biểu tượng âm thanh và người dùng */
+    border-radius: 50%;
+    /* Tạo hiệu ứng hình tròn */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Nền mờ nhẹ */
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+.btnlogin-popup {
+    background-color: transparent;
+    /* Nền trong suốt */
+    border: none;
+    /* Xóa viền */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    margin-left: 10px;
+    /* Khoảng cách giữa các biểu tượng */
+}
+
+
+.btnlogin-popup img {
+    width: 30px;
+    /* Kích thước của biểu tượng âm thanh và người dùng */
+    border-radius: 50%;
+    /* Tạo hiệu ứng hình tròn */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Nền mờ nhẹ */
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btnlogin-popup:hover img {
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Hiệu ứng khi hover */
+}
+
+.header nav ul li a:hover::before,
+.header nav ul li a:hover::after {
+    height: 20%;
+    /* Khi hover, biến đổi thành hiệu ứng bao quanh chữ */
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    /* Đặt top ở giữa màn hình */
+    left: 50%;
+    /* Đặt left ở giữa màn hình */
+    transform: translate(-50%, -50%);
+    /* Dịch chuyển nút về giữa */
+    z-index: 2;
+}
+
+article .play-btn {
+    transform: scale(0.8);
+    background-color: transparent;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+
+.list .row1 {
+    display: flex;
+    position: absolute;
+    justify-items: center;
+    align-items: center;
+    top: 70%;
+    left: 40%;
+    gap: 7px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.list .A,
+.GG {
+    width: 150px;
+    height: 50px;
+}
+
+.list .GGplay {
+    width: 200px;
+    height: 50px;
+}
+
+.list .qrcode {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 0%;
+    right: 101%;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+}
+
+.list .row2 {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 81%;
+    left: 40.5%;
+    gap: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.list .W,
+.E {
+    width: 150px;
+    height: 50px;
+}
+
+.list .sign-up {
+    background: linear-gradient(to top, rgba(255, 223, 0, 0.2), rgba(255, 221, 0, 0));
+    background-color: black;
+    width: 200px;
+    height: 51px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.list .sign-up h1 {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    gap: 20px;
+    top: 92.5%;
+    left: 3%;
+}
+
+footer .X,
+.F,
+.Y,
+.I,
+.IG,
+.T,
+.D {
+    width: 30px;
+    height: 30px;
+}
+
+.video-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

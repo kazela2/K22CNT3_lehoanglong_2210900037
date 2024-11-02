@@ -1,0 +1,54 @@
+﻿@model IEnumerable<K22CNT3_lehoanglong_2210900037.Models.thongtinUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tieusu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.taikhoan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.avatar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tieusu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.taikhoan)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.tt_id }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.tt_id }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.tt_id },  new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Back to Home", "Index", "Home", null, new { @class = "btn btn-success" })
+</div>

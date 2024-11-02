@@ -1,0 +1,42 @@
+﻿@model K22CNT3_lehoanglong_2210900037.Models.thamgia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>thamgia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaythamgia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaythamgia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sukien.tieude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sukien.tieude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.taikhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.taikhoan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.tg_id }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+</p>

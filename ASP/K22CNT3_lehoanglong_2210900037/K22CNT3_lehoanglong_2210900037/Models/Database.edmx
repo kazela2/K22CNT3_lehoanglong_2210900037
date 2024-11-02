@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebWuwaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="danhgia">
+          <Key>
+            <PropertyRef Name="dg_id" />
+          </Key>
+          <Property Name="dg_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="dg_value" Type="int" />
+          <Property Name="ngaydg" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sukien">
+          <Key>
+            <PropertyRef Name="ev_id" />
+          </Key>
+          <Property Name="ev_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tieude" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="noidung" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="thamgia">
+          <Key>
+            <PropertyRef Name="tg_id" />
+          </Key>
+          <Property Name="tg_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="ev_id" Type="int" Nullable="false" />
+          <Property Name="ngaythamgia" Type="date" />
+        </EntityType>
+        <EntityType Name="thongtinUser">
+          <Key>
+            <PropertyRef Name="tt_id" />
+          </Key>
+          <Property Name="tt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="fullname" Type="varchar" MaxLength="100" />
+          <Property Name="avatar" Type="varchar" MaxLength="255" />
+          <Property Name="tieusu" Type="text" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="taikhoan" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="matkhau" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__danhgia__user_id__239E4DCF">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="danhgia" Type="Self.danhgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="danhgia">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__thamgia__ev_id__1CF15040">
+          <End Role="Sukien" Type="Self.Sukien" Multiplicity="1" />
+          <End Role="thamgia" Type="Self.thamgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sukien">
+              <PropertyRef Name="ev_id" />
+            </Principal>
+            <Dependent Role="thamgia">
+              <PropertyRef Name="ev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__thamgia__user_id__1BFD2C07">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="thamgia" Type="Self.thamgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="thamgia">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__thongtinU__user___1FCDBCEB">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="thongtinUser" Type="Self.thongtinUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="thongtinUser">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebWuwaModelStoreContainer">
+          <EntitySet Name="danhgia" EntityType="Self.danhgia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sukien" EntityType="Self.Sukien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="thamgia" EntityType="Self.thamgia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="thongtinUser" EntityType="Self.thongtinUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__danhgia__user_id__239E4DCF" Association="Self.FK__danhgia__user_id__239E4DCF">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="danhgia" EntitySet="danhgia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__thamgia__ev_id__1CF15040" Association="Self.FK__thamgia__ev_id__1CF15040">
+            <End Role="Sukien" EntitySet="Sukien" />
+            <End Role="thamgia" EntitySet="thamgia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__thamgia__user_id__1BFD2C07" Association="Self.FK__thamgia__user_id__1BFD2C07">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="thamgia" EntitySet="thamgia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__thongtinU__user___1FCDBCEB" Association="Self.FK__thongtinU__user___1FCDBCEB">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="thongtinUser" EntitySet="thongtinUser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebWuwaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="danhgia">
+          <Key>
+            <PropertyRef Name="dg_id" />
+          </Key>
+          <Property Name="dg_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="dg_value" Type="Int32" />
+          <Property Name="ngaydg" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="User" Relationship="Self.FK__danhgia__user_id__239E4DCF" FromRole="danhgia" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Sukien">
+          <Key>
+            <PropertyRef Name="ev_id" />
+          </Key>
+          <Property Name="ev_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tieude" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="thamgias" Relationship="Self.FK__thamgia__ev_id__1CF15040" FromRole="Sukien" ToRole="thamgia" />
+        </EntityType>
+        <EntityType Name="thamgia">
+          <Key>
+            <PropertyRef Name="tg_id" />
+          </Key>
+          <Property Name="tg_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="ev_id" Type="Int32" Nullable="false" />
+          <Property Name="ngaythamgia" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Sukien" Relationship="Self.FK__thamgia__ev_id__1CF15040" FromRole="thamgia" ToRole="Sukien" />
+          <NavigationProperty Name="User" Relationship="Self.FK__thamgia__user_id__1BFD2C07" FromRole="thamgia" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="thongtinUser">
+          <Key>
+            <PropertyRef Name="tt_id" />
+          </Key>
+          <Property Name="tt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tieusu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__thongtinU__user___1FCDBCEB" FromRole="thongtinUser" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="taikhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="matkhau" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="danhgias" Relationship="Self.FK__danhgia__user_id__239E4DCF" FromRole="Users" ToRole="danhgia" />
+          <NavigationProperty Name="thamgias" Relationship="Self.FK__thamgia__user_id__1BFD2C07" FromRole="Users" ToRole="thamgia" />
+          <NavigationProperty Name="thongtinUsers" Relationship="Self.FK__thongtinU__user___1FCDBCEB" FromRole="Users" ToRole="thongtinUser" />
+        </EntityType>
+        <Association Name="FK__danhgia__user_id__239E4DCF">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="danhgia" Type="Self.danhgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="danhgia">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__thamgia__ev_id__1CF15040">
+          <End Role="Sukien" Type="Self.Sukien" Multiplicity="1" />
+          <End Role="thamgia" Type="Self.thamgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sukien">
+              <PropertyRef Name="ev_id" />
+            </Principal>
+            <Dependent Role="thamgia">
+              <PropertyRef Name="ev_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__thamgia__user_id__1BFD2C07">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="thamgia" Type="Self.thamgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="thamgia">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__thongtinU__user___1FCDBCEB">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="thongtinUser" Type="Self.thongtinUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="thongtinUser">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebWuwaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="danhgias" EntityType="Self.danhgia" />
+          <EntitySet Name="Sukiens" EntityType="Self.Sukien" />
+          <EntitySet Name="thamgias" EntityType="Self.thamgia" />
+          <EntitySet Name="thongtinUsers" EntityType="Self.thongtinUser" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__danhgia__user_id__239E4DCF" Association="Self.FK__danhgia__user_id__239E4DCF">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="danhgia" EntitySet="danhgias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__thamgia__ev_id__1CF15040" Association="Self.FK__thamgia__ev_id__1CF15040">
+            <End Role="Sukien" EntitySet="Sukiens" />
+            <End Role="thamgia" EntitySet="thamgias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__thamgia__user_id__1BFD2C07" Association="Self.FK__thamgia__user_id__1BFD2C07">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="thamgia" EntitySet="thamgias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__thongtinU__user___1FCDBCEB" Association="Self.FK__thongtinU__user___1FCDBCEB">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="thongtinUser" EntitySet="thongtinUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebWuwaModelStoreContainer" CdmEntityContainer="WebWuwaEntities">
+          <EntitySetMapping Name="danhgias">
+            <EntityTypeMapping TypeName="WebWuwaModel.danhgia">
+              <MappingFragment StoreEntitySet="danhgia">
+                <ScalarProperty Name="dg_id" ColumnName="dg_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="dg_value" ColumnName="dg_value" />
+                <ScalarProperty Name="ngaydg" ColumnName="ngaydg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sukiens">
+            <EntityTypeMapping TypeName="WebWuwaModel.Sukien">
+              <MappingFragment StoreEntitySet="Sukien">
+                <ScalarProperty Name="ev_id" ColumnName="ev_id" />
+                <ScalarProperty Name="tieude" ColumnName="tieude" />
+                <ScalarProperty Name="noidung" ColumnName="noidung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="thamgias">
+            <EntityTypeMapping TypeName="WebWuwaModel.thamgia">
+              <MappingFragment StoreEntitySet="thamgia">
+                <ScalarProperty Name="tg_id" ColumnName="tg_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ev_id" ColumnName="ev_id" />
+                <ScalarProperty Name="ngaythamgia" ColumnName="ngaythamgia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="thongtinUsers">
+            <EntityTypeMapping TypeName="WebWuwaModel.thongtinUser">
+              <MappingFragment StoreEntitySet="thongtinUser">
+                <ScalarProperty Name="tt_id" ColumnName="tt_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="tieusu" ColumnName="tieusu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="WebWuwaModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
