@@ -59,6 +59,7 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
 
             ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", danhgia.user_id);
             return View(danhgia);
+
         }
 
         // GET: danhgias/Edit/5
@@ -68,34 +69,49 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            danhgia danhgia = db.danhgias.Find(id);
-            if (danhgia == null)
+            //danhgia danhgia = db.danhgias.Find(id);
+            //if (id == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            var customer = db.danhgias.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", danhgia.user_id);
-            return View(danhgia);
-        }
-
-        // POST: danhgias/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "dg_id,user_id,dg_value,ngaydg")] danhgia danhgia)
-        {
-            if (ModelState.IsValid)
+            ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", customer.user_id);
+            ViewBag.TrangThaiList = new SelectList(new[]
             {
-                db.Entry(danhgia).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", danhgia.user_id);
-            return View(danhgia);
+               new { Value = 1, Text = "1 sao" },
+               new { Value = 2, Text = "2 sao" },
+               new { Value = 3, Text = "3 sao" },
+               new { Value = 4, Text = "4 sao" },
+               new { Value = 5, Text = "5 sao" },
+            }, "Value", "Text", customer.dg_value);
+            return View(customer);
         }
 
-        // GET: danhgias/Delete/5
-        public ActionResult Delete(int? id)
+    // POST: danhgias/Edit/5
+    // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+    // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult Edit([Bind(Include = "dg_id,user_id,dg_value,ngaydg")] danhgia danhgia)
+    {
+        if (ModelState.IsValid)
+        {
+            db.Entry(danhgia).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", danhgia.user_id);
+        return View(danhgia);
+
+
+    }
+
+    // GET: danhgias/Delete/5
+    public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -128,5 +144,6 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

@@ -3,32 +3,48 @@
 @{
     ViewBag.Title = "Details";
 }
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
 
-<h2>Details</h2>
+    .content {
+        position: relative;
+        left: 5%;
+        width: 105%;
+        height: 100%;
+    }
+</style>
+<div class="content">
 
-<div>
-    <h4>Sukien</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.tieude)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tieude)
-        </dd>
+    <h2>Details</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.noidung)
-        </dt>
+    <div>
+        <h4>Sukien</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.tieude)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.noidung)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.tieude)
+            </dd>
 
-    </dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.noidung)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.noidung)
+            </dd>
+
+        </dl>
+    </div>
+    <p style="margin:5px">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ev_id }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ev_id }, new { @class = "btn btn-primary" }) |
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
-</p>

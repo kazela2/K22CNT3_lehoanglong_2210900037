@@ -3,6 +3,20 @@
 @{
     ViewBag.Title = "Details";
 }
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .content {
+        position: relative;
+        left: 5%;
+        width: 105%;
+        height: 100%;
+    }
+</style>
+<div class="content">
 
 <h2>Details</h2>
 
@@ -44,7 +58,9 @@
 
     </dl>
 </div>
-<p>
+<p style="margin:5px">
     @Html.ActionLink("Edit", "Edit", new { id = Model.tt_id }, new { @class = "btn btn-primary" }) |
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
 </p>
+
+</div>

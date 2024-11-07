@@ -3,6 +3,20 @@
 @{
     ViewBag.Title = "Delete";
 }
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .content {
+        position: relative;
+        left: 5%;
+        width: 105%;
+        height: 100%;
+    }
+</style>
+<div class="content">
 
 <h2>Delete</h2>
 
@@ -40,9 +54,11 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
+        <div class="form-actions no-color" style="margin:5px">
             <input type="submit" value="Delete" class="btn btn-primary" /> |
             @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
         </div>
     }
+</div>
+
 </div>

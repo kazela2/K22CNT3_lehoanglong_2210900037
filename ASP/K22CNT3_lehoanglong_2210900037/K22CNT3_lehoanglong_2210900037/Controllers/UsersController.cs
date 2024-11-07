@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
         public ActionResult Index()
         {
             return View(db.Users.ToList());
+           
         }
 
         // GET: Users/Details/5

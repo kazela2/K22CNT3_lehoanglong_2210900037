@@ -1,10 +1,22 @@
 ﻿@model IEnumerable<K22CNT3_lehoanglong_2210900037.Models.danhgia>
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .content {
+        position: relative;
+        left: 5%;
+        width: 120%;
+        height: 100%;
+    }
+</style>
+<div class="content">
+
+<h2>Đánh Giá</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create",null, new {@class = "btn btn-success"})
@@ -26,23 +38,41 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.dg_value)
+            @*@Html.DisplayFor(modelItem => item.dg_value)*@
+            @if (item.dg_value == 1)
+            {
+                <span style="color:red">1 Sao</span>
+            }
+            else if (item.dg_value == 2)
+            {
+                <span style="color:orangered">2 Sao</span>
+            }
+            else if (item.dg_value == 3)
+            {
+                <span style="color:greenyellow">3 Sao</span>
+            }
+            else if (item.dg_value == 4)
+            {
+                <span style="color:lightgreen">4 Sao</span>
+            }
+            else if (item.dg_value == 5)
+            {
+                <span style="color:green">5 Sao</span>
+            }
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ngaydg)
+            @(item.ngaydg != null ? item.ngaydg.ToString("dd/MM/yyyy") : "")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.User.taikhoan)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.dg_id }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.dg_id }, new { @class = "btn btn-info" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.dg_id }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Edit", "Edit", new { id = item.dg_id }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.dg_id }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.dg_id }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }
 
 </table>
-<div>
-    @Html.ActionLink("Back to Home", "Index", "Home", null, new { @class = "btn btn-success" })
 </div>

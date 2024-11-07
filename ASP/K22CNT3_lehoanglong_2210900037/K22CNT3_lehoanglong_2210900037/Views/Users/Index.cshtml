@@ -1,10 +1,22 @@
 ﻿@model IEnumerable<K22CNT3_lehoanglong_2210900037.Models.User>
 
-@{
-    ViewBag.Title = "Users";
-}
 
-<h2>Index</h2>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .content {
+        position: relative;
+        left: 5%;
+        width:120%;
+        height:100%;
+    }
+</style>
+
+<div class="content">
+
+<h2>Người dùng</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
@@ -43,6 +55,5 @@
         </tr>
     }
 </table>
-<div>
-    @Html.ActionLink("Back to Home", "Index", "Home", null, new { @class = "btn btn-success" })
+
 </div>

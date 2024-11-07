@@ -7,20 +7,83 @@
     <title>Wuthering Wave AdminBoard</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f1f3f4; /* Neutral background color for contrast */
+    }
+
+    .sidebar {
+        width: 250px;
+        background-color: #212529;
+        color: #ffffff;
+        padding: 20px;
+        height: 100%;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+        transition: background-color 0.3s ease;
+        border-radius:5px;
+        position : fixed;
+    }
+
+        .sidebar img {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .sidebar li {
+            display: block;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 0;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+            .sidebar a:hover {
+                background-color: #495057;
+                color: #ffc107;
+            }
+
+        .sidebar .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+    .content {
+        margin-left: 300px;
+        padding: 20px;
+        flex: 1;
+        background-color: #ffffff;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+
+    .body-content {
+        padding: 20px 0;
+    }
+</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Admin Board", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <div class="sidebar">
+                <img src="~/Content/img/logo.png" alt="logo" />
+            <ul>
+
+                <li>@Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Người dùng", "Index", "Users", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Thông tin người dùng", "Index", "thongtinUsers", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Sự kiện", "Index", "Sukiens", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Thông tin tham gia sự kiện", "Index", "thamgias", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Đánh Giá", "Index", "danhgias", new { area = "" }, new { @class = "nav-link" })</li>
+            </ul>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
+        <div class="body-content">
+            @RenderBody()
+        </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
