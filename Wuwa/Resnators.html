@@ -5,22 +5,21 @@
     <link rel="icon" href="./img/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wuthering Wave Offcial</title>
-    <Link rel="stylesheet" href="./wuwa.css">
+    <title>Resnators</title>
+    <link rel="stylesheet" href="resnators.css">
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <!-- Video nền -->
-    <div class="video-back">
-        <video autoplay muted loop id="background-clip">
-            <source src="./img/vid.mp4" type="video/mp4">
-        </video>
+    <!-- ảnh nền  -->
+    <div class="img-back">
+        <img src="./img/rover_kamisama.png" alt="">
     </div>
+
+
 
     <!-- Phần đầu với menu -->
     <div class="header">
-
         <nav>
             <div class="logo">
                 <img src="./img/logo.png" alt="Wuthering Wave">
@@ -51,62 +50,63 @@
             </div>
         </nav>
     </div>
+
     <!-- Thẻ âm thanh -->
     <audio id="audio" loop>
         <source src="img/music.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- phần banner -->
+    <div class="nav">
+        <ul>
+            <li><a href="#" onclick="showContent(1)">
+                    <img src="./img/download.png" alt="">
 
-    <!-- Nút Play và QR Code -->
-    <article>
-        <button class="play-btn" id="playBtn">
-            <img src="./img/play.png" alt="">
-        </button>
-    </article>
-    <div class="list">
-        <div class="row1">
-            <a href=""><img src="img/QR.jpg" alt="" class="qrcode"></a>
-            <a href="https://apps.apple.com/us/app/wuthering-waves/id6475033368"><img src="./img/appstore-a48105a4.png"
-                    alt="" class="A"></a>
-            <a href="https://play.google.com/store/apps/details?id=com.kurogame.wutheringwaves.global"><img
-                    src="./img/googleplay-6571d674.png" alt="" class="GG"></a>
-            <a href="https://play.google.com/store/apps/details?id=com.kurogame.wutheringwaves.global"><img
-                    src="./img/googleplay-games-c9179510.png" alt="" class="GGplay"></a>
+                </a>
+            </li>
+            <li><a href="#" onclick="showContent(2)">
+                    <img src="./img/hl-active-489cf26d.png" alt="">
+
+                </a>
+            </li>
+            <li><a href="#" onclick="showContent(3)">
+                    <img src="./img/hha-active-182494e6.png" alt="">
+
+                </a>
+            </li>
+            <li><a href="#" onclick="showContent(4)">
+                    <img src="./img/download (1).png" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Box hiển thị nội dung -->
+    <div class="content-box" id="contentBox">
+        <div class="content" id="content1">
+            <h2>Unknown</h2>
+            <img src="./img/roverNu.png" alt="">
+            <img src="./img/rovernam.png" alt="">
         </div>
-
-
-        <div class="row2">
-            <a
-                href="https://download.kurogames.net/transfer/mc_WnGtDn85y8lJB4mTmYHYuNjIl9n6YGVm/official/global/en/pc_app"><img
-                    src="./img/windows-6af1a57f.png" alt="" class="W"></a>
-            <a href="https://store.epicgames.com/en-US/p/wuthering-waves-76ebc5"><img src="./img/epic-fd91b340.png"
-                    alt="" class="E"></a>
-            <button class="sign-up">
-                <h1>Sign Up</h1>
-            </button>
+        <div class="content" id="content2">
+            <h2>Huanglong</h2>
+            <img src="./img/Zhezhi.png" alt="">
+            <img src="./img/youhu.png" alt="">
+            <img src="./img/XiangliYao.png" alt="">
+            <img src="./img/changli-3da788f2.png" alt="">
+        </div>
+        <div class="content" id="content3">
+            <h2>Black Shores</h2>
+            <img src="./img/camellya-f0395b19.png" alt="">
+            <img src="./img/shorekeeper-62a1d56d.png" alt="">
+        </div>
+        <div class="content" id="content4">
+            <h2>Other</h2>
+            <img src="./img/kakaluo-938f973c.png" alt="">
         </div>
     </div>
 
 
-
-    <!-- liên hệ -->
-    <footer>
-        <a href=""><img src="./img/X.png" alt="" class="X"></a>
-        <a href=""><img src="./img/F.png" alt="" class="F"></a>
-        <a href=""><img src="./img/Y.png" alt="" class="Y"></a>
-        <a href=""><img src="./img/D.png" alt="" class="D"></a>
-        <a href=""><img src="./img/I.png" alt="" class="I"></a>
-        <a href=""><img src="./img/IG.png" alt="" class="IG"></a>
-        <a href=""><img src="./img/T.png" alt="" class="T"></a>
-    </footer>
-
-    <!-- Video ở nút play -->
-    <div class="video-container" id="videoContainer">
-        <video id="video" controls>
-            <source src="./img/Midnight Podcast _ The Shorekeeper.mp4" type="video/mp4">
-        </video>
-        <button class="close-btn" id="closeBtn">X</button>
-    </div>
 
     <!-- login and register-->
     <div class="wrapper">
@@ -170,7 +170,7 @@
     <script src="login.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="wuwa.js"></script>
+    <script src="./res.js"></script>
     <script src="sound.js"></script>
 </body>
 

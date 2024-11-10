@@ -5,17 +5,20 @@
     <link rel="icon" href="./img/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wuthering wave Offcial : News</title>
-    <link rel="stylesheet" href="news.css">
+    <title>Lore</title>
+    <link rel="stylesheet" href="lore.css">
+    <!-- Thêm Ionicons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-
     <!-- ảnh nền  -->
     <div class="img-back">
-        <img src="./img/roverjinhsi.png" alt="">
+        <img src="./img/vutru.png" alt="">
     </div>
+
 
 
     <!-- Phần đầu với menu -->
@@ -51,49 +54,56 @@
         </nav>
     </div>
 
+
+
     <!-- Thẻ âm thanh -->
     <audio id="audio" loop>
         <source src="img/music.mp3" type="audio/mpeg">
     </audio>
-    <!-- Phần box dưới -->
-    <div class="new-box">
-        <div class="title">
-            NEWS
-        </div>
-        <div class="log">
-            <div class="log1">
-                <div class="menu">
-                    <ul class="title1">
-                        <li><a href="">Latest</a></li>
-                        <li><a href="">Notice</a></li>
-                        <li><a href="">News</a></li>
-                        <li><a href="">Event</a></li>
-                    </ul>
-                    <ul class="news-items">
-                        <li>
-                            <a class="news-tag notice">•Notice•</a>
-                            <a class="news-title">Post-Lament Anthropocene: Stars Intertw...</a>
-                            <a class="news-date">24.10.20</a>
-                        </li>
-                        <li>
-                            <a class="news-tag notice">•Notice•</a>
-                            <a class="news-title">A Compilation of Upcoming Events in Wut...</a>
-                            <a class="news-date">24.10.18</a>
-                        </li>
-                        <li>
-                            <a class="news-tag notice">•Notice•</a>
-                            <a class="news-title">[Bountiful Crescendo] Limited-Time Mate...</a>
-                            <a class="news-date">24.10.16</a>
-                        </li>
-                        <!-- Thêm các mục tin tức khác nếu cần -->
-                    </ul>
-                </div>
-            </div>
-            <div class="news-image">
-                <img src="./img/banner.jpg" alt="Closed Beta II Recruitment FAQ">
+    <!-- banner chuyển đổi  -->
+    <div class="container">
+        <div class="image-box">
+            <img src="img/i-gmz-6b5708bb.jpg" class="active" alt="Image 1" data-content="Nội dung của ảnh 1">
+            <img src="img/i-hy-09f3521f.jpg" alt="Image 2" data-content="Nội dung của ảnh 2">
+            <img src="img/i-cx-d24c277b.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+            <img src="img/i-sentinel-0721401b.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+            <img src="img/i-slls-cab62db7.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+            <img src="img/i-threnodian-edc05508.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+            <img src="img/hs-a32c8d48.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+            <img src="img/i-sentinel-0721401b.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+            <img src="img/i-hy-09f3521f.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+            <img src="img/i-slls-cab62db7.jpg" alt="Image 3" data-content="Nội dung của ảnh 3">
+
+            <div class="buttons">
+                <!-- Các nút sử dụng Ionicons -->
+                <button id="prevBtn"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
+                <button id="nextBtn"><ion-icon name="arrow-forward-circle-outline"></ion-icon></button>
             </div>
         </div>
 
+        <div class="box">
+            <img src="img/hha-active-182494e6.png" alt="Image" class="box-image">
+            <div class="box-content">
+                <h3>Resnators</h3>
+                <p>"Individuals with the ability to resonate with certain objects and manipulate their frequencies are
+                    known as "Resonators".
+                    These individuals exhibit unique "Resonance Abilities", also known as their "Fortes", through the
+                    "Tacet Mark" on their bodies.
+                    According to experts, a Resonator's abilities are often influenced by their past experiences and
+                    subconscious mind."</p>
+                <h3>Echo</h3>
+                <p>Tacet Discords may leave behind "Reverberations" when they are eliminated,
+                    which can then be transformed into "Echoes" through the Pangu Terminal's Data Bank,
+                    providing a useful advantage in battle.</p>
+                <h3>Resnators</h3>
+                <p>"Individuals with the ability to resonate with certain objects and manipulate their frequencies are
+                    known as "Resonators".
+                    These individuals exhibit unique "Resonance Abilities", also known as their "Fortes", through the
+                    "Tacet Mark" on their bodies.
+                    According to experts, a Resonator's abilities are often influenced by their past experiences and
+                    subconscious mind."</p>
+            </div>
+        </div>
 
         <!-- login and register-->
         <div class="wrapper">
@@ -157,6 +167,7 @@
         <script src="login.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="lore.js"></script>
         <script src="sound.js"></script>
 </body>
 
