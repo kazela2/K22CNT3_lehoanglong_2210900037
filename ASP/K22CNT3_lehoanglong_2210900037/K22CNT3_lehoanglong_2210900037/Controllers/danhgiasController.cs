@@ -12,7 +12,7 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
 {
     public class danhgiasController : Controller
     {
-        private WebWuwaEntities db = new WebWuwaEntities();
+        private Entities db = new Entities();
 
         // GET: danhgias
         public ActionResult Index()
@@ -59,7 +59,6 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
 
             ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", danhgia.user_id);
             return View(danhgia);
-
         }
 
         // GET: danhgias/Edit/5
@@ -91,27 +90,25 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
             return View(customer);
         }
 
-    // POST: danhgias/Edit/5
-    // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-    // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public ActionResult Edit([Bind(Include = "dg_id,user_id,dg_value,ngaydg")] danhgia danhgia)
-    {
-        if (ModelState.IsValid)
+        // POST: danhgias/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "dg_id,user_id,dg_value,ngaydg")] danhgia danhgia)
         {
-            db.Entry(danhgia).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                db.Entry(danhgia).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", danhgia.user_id);
+            return View(danhgia);
         }
-        ViewBag.user_id = new SelectList(db.Users, "user_id", "taikhoan", danhgia.user_id);
-        return View(danhgia);
 
-
-    }
-
-    // GET: danhgias/Delete/5
-    public ActionResult Delete(int? id)
+        // GET: danhgias/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -144,6 +141,5 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
             }
             base.Dispose(disposing);
         }
-
     }
 }

@@ -1,15 +1,31 @@
-﻿@*<link rel="stylesheet" href="~/Content/index.css" />
-<body>
-    <div id="left">
-        <img src="~/Content/img/logo.png" alt="logo" />
+﻿@{
 
+    ViewBag.Title = "Home Page";
+}
+<style>
+    main {
+        position: absolute;
+        left: 20%;
+        width: 120%;
+        height: 100%;
+    }
+</style>
+    <<main>
 
-        <li>@Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
-        <li>@Html.ActionLink("Người dùng", "Index", "Users", new { area = "" }, new { @class = "nav-link" })</li>
-        <li>@Html.ActionLink("Thông tin người dùng", "Index", "thongtinUsers", new { area = "" }, new { @class = "nav-link" })</li>
-        <li>@Html.ActionLink("Sự kiện", "Index", "Sukiens", new { area = "" }, new { @class = "nav-link" })</li>
-        <li>@Html.ActionLink("Thông tin tham gia sự kiện", "Index", "thamgias", new { area = "" }, new { @class = "nav-link" })</li>
-        <li>@Html.ActionLink("Đánh Giá", "Index", "danhgias", new { area = "" }, new { @class = "nav-link" })</li>
+    <section class="row" aria-labelledby="aspnetTitle">
+
+        <h1 id="title">Wuthering Wave</h1>
+
+        <p class="lead" style="font-family:bold">Muốn biết thêm chi tiết thì hãy ấn vào dưới đây</p>
+
+        <p><a href="http://127.0.0.1:5500/wuwa.html" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+
+    </section>
+
+    <div class="row" style="color:forestgreen">
+
+        <h2>Chào mừng bạn đến với trang chủ của Wuthering Wave </h2>
 
     </div>
-</body>*@
+
+</main>

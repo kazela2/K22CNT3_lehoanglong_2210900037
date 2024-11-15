@@ -1,4 +1,4 @@
-﻿@model IEnumerable<K22CNT3_lehoanglong_2210900037.Models.danhgia>
+﻿﻿@model IEnumerable<K22CNT3_lehoanglong_2210900037.Models.danhgia>
 
 
 <style>
@@ -16,63 +16,64 @@
 </style>
 <div class="content">
 
-<h2>Đánh Giá</h2>
+    <h2>Đánh Giá</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create",null, new {@class = "btn btn-success"})
-</p>
-<table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.dg_value)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ngaydg)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.taikhoan)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Đánh Giá", "Create", null, new { @class = "btn btn-success" })
+    </p>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dg_value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngaydg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.taikhoan)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.dg_value)*@
-            @if (item.dg_value == 1)
-            {
-                <span style="color:red">1 Sao</span>
-            }
-            else if (item.dg_value == 2)
-            {
-                <span style="color:orangered">2 Sao</span>
-            }
-            else if (item.dg_value == 3)
-            {
-                <span style="color:greenyellow">3 Sao</span>
-            }
-            else if (item.dg_value == 4)
-            {
-                <span style="color:lightgreen">4 Sao</span>
-            }
-            else if (item.dg_value == 5)
-            {
-                <span style="color:green">5 Sao</span>
-            }
-        </td>
-        <td>
-            @(item.ngaydg != null ? item.ngaydg.ToString("dd/MM/yyyy") : "")
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.taikhoan)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.dg_id }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Details", "Details", new { id = item.dg_id }, new { @class = "btn btn-info" }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.dg_id }, new { @class = "btn btn-danger" })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.dg_value)*@
+                    @if (item.dg_value == 1)
+                    {
+                        <span style="color:red">1 Sao</span>
+                    }
+                    else if (item.dg_value == 2)
+                    {
+                        <span style="color:orangered">2 Sao</span>
+                    }
+                    else if (item.dg_value == 3)
+                    {
+                        <span style="color:greenyellow">3 Sao</span>
+                    }
+                    else if (item.dg_value == 4)
+                    {
+                        <span style="color:lightgreen">4 Sao</span>
+                    }
+                    else if (item.dg_value == 5)
+                    {
+                        <span style="color:green">5 Sao</span>
+                    }
+                </td>
+                <td>
+                    @(item.ngaydg != null ? item.ngaydg.ToString("dd/MM/yyyy") : "")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.taikhoan)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.dg_id }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.dg_id }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.dg_id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
 </div>

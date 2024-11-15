@@ -32,7 +32,9 @@
         <th>
             @Html.DisplayNameFor(model => model.email)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleId)
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -47,6 +49,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.email)
             </td>
+            
+            <td>
+                @if (item.RoleId == 1)
+                {
+                    <span style="color:green"> Admin </span>
+                }
+                else
+                {
+                    <span style="color:cornflowerblue"> Customer </span>
+                }
+            </td>
+            
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.user_id }, new { @class = "btn btn-primary" }) |
                 @Html.ActionLink("Details", "Details", new { id = item.user_id }, new { @class = "btn btn-info" }) |

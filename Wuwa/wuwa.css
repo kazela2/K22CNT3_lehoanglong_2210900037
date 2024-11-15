@@ -192,6 +192,28 @@ body {
     /* Khi hover, biến đổi thành hiệu ứng bao quanh chữ */
 }
 
+.Customer{
+    background-color: transparent;
+    /* Nền trong suốt */
+    border: none;
+    /* Xóa viền */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    margin-left: 10px;
+    /* Khoảng cách giữa các biểu tượng */
+}
+
+.Admin{
+    background-color: transparent;
+    /* Nền trong suốt */
+    border: none;
+    /* Xóa viền */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    margin-left: 10px;
+    /* Khoảng cách giữa các biểu tượng */
+}
+
 article {
     display: flex;
     flex-direction: column;

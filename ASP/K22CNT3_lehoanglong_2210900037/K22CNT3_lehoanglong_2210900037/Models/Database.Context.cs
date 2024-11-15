@@ -13,10 +13,10 @@ namespace K22CNT3_lehoanglong_2210900037.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebWuwaEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public WebWuwaEntities()
-            : base("name=WebWuwaEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -30,5 +30,6 @@ namespace K22CNT3_lehoanglong_2210900037.Models
         public virtual DbSet<thamgia> thamgias { get; set; }
         public virtual DbSet<thongtinUser> thongtinUsers { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
     }
 }

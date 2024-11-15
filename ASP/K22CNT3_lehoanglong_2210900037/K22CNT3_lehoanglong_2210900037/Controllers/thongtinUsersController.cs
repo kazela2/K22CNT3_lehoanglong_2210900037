@@ -12,7 +12,7 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
 {
     public class thongtinUsersController : Controller
     {
-        private WebWuwaEntities db = new WebWuwaEntities();
+        private Entities db = new Entities();
 
         // GET: thongtinUsers
         public ActionResult Index()

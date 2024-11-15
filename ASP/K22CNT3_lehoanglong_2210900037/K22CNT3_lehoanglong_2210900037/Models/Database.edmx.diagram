@@ -4,16 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6c0b48da09c94752adebb84c8b52775b" Name="Diagram1">
-        <EntityTypeShape EntityType="WebWuwaModel.danhgia" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebWuwaModel.Sukien" Width="1.5" PointX="4.125" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebWuwaModel.thamgia" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebWuwaModel.thongtinUser" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebWuwaModel.User" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="WebWuwaModel.FK__danhgia__user_id__239E4DCF" ManuallyRouted="false" />
-        <AssociationConnector Association="WebWuwaModel.FK__thamgia__ev_id__1CF15040" ManuallyRouted="false" />
-        <AssociationConnector Association="WebWuwaModel.FK__thamgia__user_id__1BFD2C07" ManuallyRouted="false" />
-        <AssociationConnector Association="WebWuwaModel.FK__thongtinU__user___1FCDBCEB" ManuallyRouted="false" />
+      <Diagram DiagramId="a56e500711104589859534989be33cef" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.danhgia" Width="1.5" PointX="2" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Sukien" Width="1.5" PointX="5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.thamgia" Width="1.5" PointX="7" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.thongtinUser" Width="1.5" PointX="4.875" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3.875" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__danhgia__user_id__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__thamgia__ev_id__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__thamgia__user_id__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__thongtinU__user___1FCDBCEB" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="0.75" PointY="4.125" />
+        <AssociationConnector Association="Model.FK__Users__RoleId__3C69FB99" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

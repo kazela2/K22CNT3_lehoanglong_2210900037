@@ -1,0 +1,77 @@
+﻿@model K22CNT3_lehoanglong_2210900037.Models.User
+
+
+@{
+    ViewBag.Title = "Register";
+}
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .content {
+        position: relative;
+        left: 5%;
+        width: 105%;
+        height: 100%;
+    }
+</style>
+
+<div class="content">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h2>Register</h2>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.taikhoan, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.taikhoan, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.taikhoan, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.matkhau, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoleId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RoleId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input style="margin:5px" type="submit" value="Register" class="btn btn-primary my-2" />
+        </div>
+    </div>
+</div>
+    }
+
+    <div>
+        <p>Bạn đã có tài khoản? <a href="@Url.Action("Login", "Users")">Đăng nhập ngay</a></p>
+    </div>
+</div>

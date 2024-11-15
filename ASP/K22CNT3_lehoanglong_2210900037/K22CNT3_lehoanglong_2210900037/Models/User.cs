@@ -26,6 +26,7 @@ namespace K22CNT3_lehoanglong_2210900037.Models
         public string taikhoan { get; set; }
         public string matkhau { get; set; }
         public string email { get; set; }
+        public Nullable<int> RoleId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<danhgia> danhgias { get; set; }
@@ -33,5 +34,6 @@ namespace K22CNT3_lehoanglong_2210900037.Models
         public virtual ICollection<thamgia> thamgias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<thongtinUser> thongtinUsers { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

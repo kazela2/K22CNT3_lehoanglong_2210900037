@@ -119,7 +119,27 @@ body {
     background-color: black;
     color: #fff;
 }
+.Customer{
+    background-color: transparent;
+    /* Nền trong suốt */
+    border: none;
+    /* Xóa viền */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    margin-left: 10px;
+    /* Khoảng cách giữa các biểu tượng */
+}
 
+.Admin{
+    background-color: transparent;
+    /* Nền trong suốt */
+    border: none;
+    /* Xóa viền */
+    cursor: pointer;
+    /* Thay đổi con trỏ khi hover */
+    margin-left: 10px;
+    /* Khoảng cách giữa các biểu tượng */
+}
 .icon-btn {
     background-color: transparent;
     /* Nền trong suốt */

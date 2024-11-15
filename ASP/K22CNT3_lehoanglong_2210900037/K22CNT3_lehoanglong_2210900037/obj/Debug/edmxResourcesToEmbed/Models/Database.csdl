@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="WebWuwaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="danhgia">
     <Key>
       <PropertyRef Name="dg_id" />
@@ -52,6 +52,8 @@
     <NavigationProperty Name="danhgias" Relationship="Self.FK__danhgia__user_id__239E4DCF" FromRole="Users" ToRole="danhgia" />
     <NavigationProperty Name="thamgias" Relationship="Self.FK__thamgia__user_id__1BFD2C07" FromRole="Users" ToRole="thamgia" />
     <NavigationProperty Name="thongtinUsers" Relationship="Self.FK__thongtinU__user___1FCDBCEB" FromRole="Users" ToRole="thongtinUser" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="Role" Relationship="Model.FK__Users__RoleId__3C69FB99" FromRole="User" ToRole="Role" />
   </EntityType>
   <Association Name="FK__danhgia__user_id__239E4DCF">
     <End Role="Users" Type="Self.User" Multiplicity="1" />
@@ -101,7 +103,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="WebWuwaEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="danhgias" EntityType="Self.danhgia" />
     <EntitySet Name="Sukiens" EntityType="Self.Sukien" />
     <EntitySet Name="thamgias" EntityType="Self.thamgia" />
@@ -123,5 +125,30 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="thongtinUser" EntitySet="thongtinUsers" />
     </AssociationSet>
+    <EntitySet Name="Roles" EntityType="Model.Role" />
+    <AssociationSet Name="FK__Users__RoleId__3C69FB99" Association="Model.FK__Users__RoleId__3C69FB99">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="Model.FK__Users__RoleId__3C69FB99" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__Users__RoleId__3C69FB99">
+    <End Type="Model.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

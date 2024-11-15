@@ -1,4 +1,5 @@
-﻿using System;
+﻿using K22CNT3_lehoanglong_2210900037.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,11 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
     {
         public ActionResult Index()
         {
+            if (Session["User"] != null)
+            {
+                var user = Session["User"] as User;
+                ViewBag.Fullname = user.email;
+            }    
             return View();
         }
 
@@ -22,7 +28,7 @@ namespace K22CNT3_lehoanglong_2210900037.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Xin chào bạn, mời bạn đăng nhập để tiếp tục";
 
             return View();
         }

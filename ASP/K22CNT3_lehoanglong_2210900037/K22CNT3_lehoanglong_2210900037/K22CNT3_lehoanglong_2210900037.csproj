@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers1\CustomerController.cs" />
     <Compile Include="Controllers\danhgiasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SukiensController.cs" />
@@ -155,6 +156,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>Database.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sukien.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -195,8 +199,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Database.Context.cs</LastGenOutput>
       <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>Database.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Database.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -266,6 +270,12 @@
     <Content Include="Views\thongtinUsers\Details.cshtml" />
     <Content Include="Views\thongtinUsers\Edit.cshtml" />
     <Content Include="Views\thongtinUsers\Index.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\Users\Register.cshtml" />
+    <Content Include="Views\Shared\Layout2.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Contact.cshtml" />
+    <Content Include="Views\Customer\Event.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

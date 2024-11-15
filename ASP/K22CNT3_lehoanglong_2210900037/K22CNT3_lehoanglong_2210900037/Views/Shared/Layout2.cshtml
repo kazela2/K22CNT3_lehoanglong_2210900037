@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="~/Content/img/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wuthering Wave AdminBoard</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f3f4; /* Neutral background color for contrast */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #212529;
+            color: #ffffff;
+            padding: 20px;
+            height: 100%;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            position: fixed;
+        }
+
+            .sidebar img {
+                font-size: 24px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .sidebar li {
+                display: block;
+                color: #fff;
+                font-size: 18px;
+                padding: 10px 0;
+                text-decoration: none;
+                margin-left: 10px;
+            }
+
+            .sidebar a:hover {
+                color: cyan;
+            }
+
+            .sidebar .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+        .content {
+            margin-left: 300px;
+            padding: 20px;
+            flex: 1;
+            background-color: #ffffff;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .login {
+            position: absolute;
+            bottom: 30px;
+            left: 12%;
+        }
+
+        .body-content {
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="~/Content/img/logo.png" alt="logo" />
+        <ul>
+
+            <li>@Html.ActionLink("Trang Chủ", "Index", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
+            <li>@Html.ActionLink("Sự kiện", "Event", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
+            <li>@Html.ActionLink("Đánh Giá", "Index", "danhgias", new { area = "" }, new { @class = "nav-link" })</li>
+        </ul>
+        <div class="login">
+            <ul>
+
+                <li>@Html.ActionLink("Đăng Ký", "Register", "Users", new { area = "" }, new { @class = "nav-link" })</li>
+
+
+                @if (Session["User"] != null)
+                {
+                    var user = Session["User"] as K22CNT3_lehoanglong_2210900037.Models.User;
+                    if (user != null)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link text-white">
+                                Xin chào, @user.taikhoan!
+                            </span>
+                            <form method="post" action="@Url.Action("Logout", "Users")" class="d-inline">
+                                <button type="submit" class="btn btn-danger">Đăng Xuất</button>
+                            </form>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Đăng Nhập", "Login", "Users", new { area = "" }, new { @class = "nav-link" })</li>
+                }
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -48,6 +48,7 @@
     transition: transform .18s ease;
     transform: translateX(0);
 }
+
 .wrapper .icon-close{
     position: absolute;
     top: 0;

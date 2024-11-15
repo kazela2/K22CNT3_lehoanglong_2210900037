@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="WebWuwaModelStoreContainer" CdmEntityContainer="WebWuwaEntities">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="danhgias">
-      <EntityTypeMapping TypeName="WebWuwaModel.danhgia">
+      <EntityTypeMapping TypeName="Model.danhgia">
         <MappingFragment StoreEntitySet="danhgia">
           <ScalarProperty Name="dg_id" ColumnName="dg_id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sukiens">
-      <EntityTypeMapping TypeName="WebWuwaModel.Sukien">
+      <EntityTypeMapping TypeName="Model.Sukien">
         <MappingFragment StoreEntitySet="Sukien">
           <ScalarProperty Name="ev_id" ColumnName="ev_id" />
           <ScalarProperty Name="tieude" ColumnName="tieude" />
@@ -21,7 +21,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="thamgias">
-      <EntityTypeMapping TypeName="WebWuwaModel.thamgia">
+      <EntityTypeMapping TypeName="Model.thamgia">
         <MappingFragment StoreEntitySet="thamgia">
           <ScalarProperty Name="tg_id" ColumnName="tg_id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -31,7 +31,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="thongtinUsers">
-      <EntityTypeMapping TypeName="WebWuwaModel.thongtinUser">
+      <EntityTypeMapping TypeName="Model.thongtinUser">
         <MappingFragment StoreEntitySet="thongtinUser">
           <ScalarProperty Name="tt_id" ColumnName="tt_id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -42,12 +42,21 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="WebWuwaModel.User">
+      <EntityTypeMapping TypeName="Model.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
           <ScalarProperty Name="matkhau" ColumnName="matkhau" />
           <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Model.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

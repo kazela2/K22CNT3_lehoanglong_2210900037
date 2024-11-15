@@ -1,4 +1,4 @@
-﻿@model K22CNT3_lehoanglong_2210900037.Models.danhgia
+﻿﻿@model K22CNT3_lehoanglong_2210900037.Models.danhgia
 
 @{
     ViewBag.Title = "Details";
@@ -18,41 +18,41 @@
 </style>
 <div class="content">
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>danhgia</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.dg_value)
-        </dt>
+    <div>
+        <h4>danhgia</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.dg_value)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.dg_value)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.dg_value)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ngaydg)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ngaydg)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ngaydg)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ngaydg)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.User.taikhoan)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.User.taikhoan)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.User.taikhoan)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.User.taikhoan)
+            </dd>
 
-    </dl>
-</div>
-<p style="margin:5px">
-    @Html.ActionLink("Edit", "Edit", new { id = Model.dg_id }, new { @class = "btn btn-primary" }) |
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
-</p>
+        </dl>
+    </div>
+    <p style="margin:5px">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.dg_id }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+    </p>
 
 </div>
